@@ -23,7 +23,7 @@ public class TestController {
 
     @RequestMapping("/testThymeleaf")
     public String testThymeleaf(Map<String, Object> map) {
-        map.put("thymeleaf","thymeleaf.html，经过thymeleaf模板解析");
+        map.put("thymeleaf","thymeleaf.html，经过thymeleaf模板解析-");
         map.put("users", Arrays.asList("qqq","www","<h1>eee</h1>"));
         return "thymeleaf";
     }
