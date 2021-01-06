@@ -3,8 +3,12 @@ package com.web.config;
 import com.web.component.LoginHandlerInterceptor;
 import com.web.component.MyLocaleResolver;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.server.ConfigurableWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.*;
 
 /**
@@ -68,6 +72,7 @@ public class MvcConfig implements WebMvcConfigurer {
             public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
                 configurer.enable("defaultServletHandler");
             }*/
+
         };
     }
 
@@ -77,4 +82,6 @@ public class MvcConfig implements WebMvcConfigurer {
     public MyLocaleResolver localeResolver() {
         return new MyLocaleResolver();
     }
+
+
 }
