@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: Rick
+Build-Jdk: version 1.8.0_202
+Implementation-Title: web_war
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.springbootwar
+Main-Class: ${start-class}
+

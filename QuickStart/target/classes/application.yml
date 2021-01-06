@@ -1,0 +1,74 @@
+# 文档块1
+server:
+  port: 8081
+
+myname: ${random.uuid}_ymlbeanname@qq.com
+myage: 12
+
+ymlbean:
+  name: ${myname}
+  age: ${myage}
+  flag: ${isflag:false}
+  time: 2020/7/7
+
+  persion: {name: persionName, gender: 1}
+  map: {k1: v1, k2: v2}
+  list:
+    - {name: liu, gender: 1}
+    - {name: wang, gender: 2}
+# 集合中不能使用下列方式
+#    - persion1:
+#        name: 张三
+#        gender: 2
+#    - persion2:
+#        name: 王五
+#        gender: 1
+
+
+# 配置profile
+spring:
+  profiles:
+    active: dev
+
+#  cache:
+#    redis:
+#      use-key-prefix: true
+
+# 开启Spring的debug模式， 可以看到那些自动配置类有没有生效
+# debug: true
+
+
+# 配置日志的级别
+logging:
+  level:
+    root: warn
+    #com.example.demo.DemoApplicationTests: info # com.example: warn 指定莫个包某个类使用什么级别输出
+  file:
+    name: springboot.log # 也可以指定磁盘路径 ： F:/springboot.log
+#  pattern:
+#    console: # 控制台输出日志的格式
+#    file: # 指定文件输出日志的格式
+
+#  file: #指定用户跟目录下的文件的生成， 文件名使用spring.log
+#    path: /spring/log
+---
+# 文档块2
+server:
+  port: 8088
+# 指定当前环境
+#　spring:
+#  profile: dev
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+# 文档块3
+
+server:
+  port: 8080
+spring:
+  config:
+    activate:
+      on-profile: prod
