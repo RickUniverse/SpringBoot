@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>hello thymeleaf.html</h1>
+    <div th:text="${thymeleaf}">
+
+        这是直接访问静态资源
+    </div>
+    <h1>
+        [(${thymeleaf})]
+    </h1>
+    <h1>
+        [[${thymeleaf}]]
+    </h1>
+    <ul>
+        <!--每次遍历都会生成这个标签-->
+        <li th:utext="${user}" th:each="user : ${users}">[[${user}]]</li>
+    </ul>
+</body>
+</html>
