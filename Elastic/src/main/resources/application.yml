@@ -1,0 +1,11 @@
+spring:
+  # Elasticsearch
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          # 要连接的ES客户端 多个逗号分隔
+          endpoints: 192.168.1.109:9300
+      # 暂未使用ES 关闭其持久化存储
+      repositories:
+        enabled: true
